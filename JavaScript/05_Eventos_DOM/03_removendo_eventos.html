@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Removendo eventos</h1>
+    <button>Remove</button>
+
+    <script>
+        //Removendo eventos
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            console.log('Clicou');
+        });
+
+        //Removendo o evento
+        btn.removeEventListener('click', () => {
+            console.log('Clicou');
+        });
+    </script>
+</body>
+</html>

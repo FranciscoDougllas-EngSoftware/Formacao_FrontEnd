@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos de Mouse</h1>
+
+    <button id="botao">Clique aqui</button>
+
+    <script>
+        const botao = document.querySelector('#botao');
+        botao.addEventListener('click', () => {
+            document.write('Clicou no botão');
+        });
+
+        botao.addEventListener('mouseover', () => {
+            document.write('Passou o mouse por cima');
+        });
+
+        botao.addEventListener('mouseout', () => {
+            document.write('Tirou o mouse de cima');
+        });
+
+        botao.addEventListener('mousedown', () => {
+            document.write('Clicou com o botão esquerdo');
+        });
+
+        botao.addEventListener('mouseup', () => {
+            document.write('Soltou o botão esquerdo');
+        });
+
+        botao.addEventListener('mousemove', () => {
+            document.write('Moveu o mouse');
+        });
+    </script>
+</body>
+</html>

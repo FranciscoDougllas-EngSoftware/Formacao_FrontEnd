@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movendo se pelo DOM</h1>
+
+    <header>
+        <h1 id="title">Titulo</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Categoria</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-container">
+        <div class="product">
+            <h2>Produto 1</h2>
+            <p>Descrição</p>
+        </div>
+
+        <div class="product">
+            <h2>Produto 2</h2>
+            <p>Descrição</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados</p>
+    </footer>
+    <script>
+        //Selecionando pelo tag
+        const tags = document.getElementsByTagName('h2');
+        for (let i = 0; i < tags.length; i++) {
+            tags[i].style.color = "green";
+        }
+
+        //Selecionando pelo o id
+        const ids = document.querySelector("#title");
+        ids.style.color = "red";
+
+        //Selecionandoo pelo class
+        const classes = document.querySelectorAll(".product");
+        for (let i = 0; i < classes.length; i++) {
+            classes[i].style.color = "blue";
+        }
+
+        //Metodo insertBefore
+        const p = document.createElement("p");
+        const header = title.parentElement;
+        header.insertBefore(p, title.nextSibling);
+
+        //Metodo apeendChild
+        const footer = document.querySelector("footer");
+        const novoP = document.createElement("p");
+        novoP.textContent = "Todos os direitos Francisco";
+        footer.appendChild(p);
+
+        //Metodo removeChild
+        const main = document.querySelector("main");
+        const primeiroDiv = main.firstElementChild;
+        main.removeChild(primeiroDiv);
+
+        //Metodo replaceChild
+        const segundoDiv = main.firstElementChild;
+        const novoDiv = document.createElement("div");
+        novoDiv.textContent = "Novo Div";
+        main.replaceChild(novoDiv, segundoDiv);
+
+        //getAttribute
+        const link = document.querySelector("a");
+        console.log(link.getAttribute("href"));
+
+        //setAttribute
+        const link2 = document.querySelector("a");
+        link2.setAttribute("href", "https://www.google.com.br");
+
+        //offsetWidth
+        const mainContainer = document.querySelector("#main-container");
+        const larguraMainContainer = mainContainer.offsetWidth;
+        console.log(larguraMainContainer);
+
+        //offsetHeight
+        const footer2 = document.querySelector("footer");
+        const alturaFooter = footer.offsetHeight;
+        console.log(alturaFooter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Texto pequeno Preto</h1>
+    <button>Muda texto</button>
+
+    <script>
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", () => {
+            const h1 = document.querySelector("h1");
+            h1.style.color = "red";
+            h1.style.fontSize = "50px";
+        })
+    </script>
+</body>
+</html>

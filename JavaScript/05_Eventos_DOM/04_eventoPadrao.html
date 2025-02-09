@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Texto pequeno</h2>
+    <button>Muda texto</button>
+
+    <script>
+        //Evento padrão
+        var btn = document.querySelector('button');
+        var h2 = document.querySelector('h2');
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            h2.textContent = 'Texto mudou';
+        });
+    </script>
+</body>
+</html>
